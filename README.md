@@ -1,3 +1,16 @@
+# Cheap IP Smart PDU MQTT client
+
+There are several PDUs available:
+- Logilink PDU8P01
+- Intellinet 163682
+- Argus SW-0816
+- Inter-Tech SW-0816
+- Lanbe LIU-0816-WN
+
+All seem to be based on the same device available under different brands. The firmware versions seem to have small differences, but essentially the web page for configuration and control look very similar.
+
+This is a fork of [longmover's code](https://github.com/longmover/Intellinet_163682_IP_smart_PDU_API).
+
 # Intellinet IP smart PDU API [163682]
 A python API wrapper for Intellinet IP smart PDU [163682] that allows you to do anything that the web interface provides.
 You can:

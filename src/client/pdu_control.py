@@ -1,9 +1,10 @@
-import ip_pdu
 import json
 import argparse
 import time
 import paho.mqtt.client as mqtt     # pip install paho.mqtt
 from pythonping import ping
+
+from .ip_pdu import IPU
 
 MQTT_BASE = "ipPDU/"
 MQTT_COMMAND_TOPIC = MQTT_BASE + "command"
@@ -13,7 +14,7 @@ MQTT_HA_SENSOR_DISCOVERY_TOPIC = "homeassistant/sensor/" + "ipPDU"
 
 def mainLoop(host, mqtt_broker):
     if not mqtt_broker is None:
-        pdu = ip_pdu.IPU(host)
+        pdu = IPU(host)
         mqttc = mqtt.Client()
         if not mqtt_broker[2] is None:
             mqttc.username_pw_set(mqtt_broker[2], password=mqtt_broker[3])
